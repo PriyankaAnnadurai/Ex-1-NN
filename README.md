@@ -76,9 +76,9 @@ import numpy as np
 
 ```py
 df=pd.read_csv("Churn_Modelling.csv")
-
+```
 ### Checking Data
-py
+```py
 df.head()
 df.tail()
 df.columns
