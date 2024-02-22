@@ -59,7 +59,7 @@ Splitting the data into test and train<BR>
 ##  PROGRAM:
 
 ### Import Libraries
-py
+```py
 
 from google.colab import files
 import pandas as pd
@@ -70,11 +70,11 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 from scipy import stats
 import numpy as np
-
+```
 
 ### Read the dataset 
 
-py
+```py
 df=pd.read_csv("Churn_Modelling.csv")
 
 ### Checking Data
@@ -82,60 +82,60 @@ py
 df.head()
 df.tail()
 df.columns
-
+```
 
 ### Check the missing data
-py
+```py
 df.isnull().sum()
-
+```
 
 ### Check for Duplicates
-py
+```py
 df.duplicated()
-
+```
 
 ### Assigning Y
-py
+```py
 y = df.iloc[:, -1].values
 print(y)
-
+```
 
 ### Check for duplicates
-py
+```py
 df.duplicated()
-
+```
 
 ### Check for outliers
-py
+```py
 df.describe()
-
+```
 
 ### Dropping string values data from dataset
-py
+```py
 data = df.drop(['Surname', 'Geography','Gender'], axis=1)
-
+```
 ### Checking datasets after dropping string values data from dataset
-py
+```py
 data.head()
-
+```
 
 ### Normalize the dataset
-py
+```py
 scaler=MinMaxScaler()
 df1=pd.DataFrame(scaler.fit_transform(data))
 print(df1)
-
+```
 
 ### Split the dataset
-py
+```py
 X=df.iloc[:,:-1].values
 y=df.iloc[:,-1].values
 print(X)
 print(y)
-
+```
 
 ### Training and testing model
-py
+```py
 X_train ,X_test ,y_train,y_test=train_test_split(X,y,test_size=0.2)
 print("X_train\n")
 print(X_train)
@@ -143,7 +143,7 @@ print("\nLenght of X_train ",len(X_train))
 print("\nX_test\n")
 print(X_test)
 print("\nLenght of X_test ",len(X_test))
-
+```
 ## OUTPUT:
 
 ### Data checking
@@ -158,7 +158,7 @@ print("\nLenght of X_test ",len(X_test))
 
 ![image](https://github.com/PSriVarshan/Ex-1-NN/assets/114944059/beb23c01-7e40-4a4f-a743-b803cd87154d)
 
-### Vakues of 'Y'
+### Values of 'Y'
 
 ![image](https://github.com/PSriVarshan/Ex-1-NN/assets/114944059/12a5643f-4058-4095-9a6e-10ecc1ff4357)
 
